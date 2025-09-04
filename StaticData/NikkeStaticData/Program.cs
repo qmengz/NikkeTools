@@ -10,7 +10,7 @@ namespace NikkeStaticData;
 public static class FileDecryptor
 {
 	static HttpClient client = new HttpClient();
-	private static readonly string url = "https://global-lobby.nikke-kr.com/v1/staticdatapack";
+	private static readonly string url = "https://global-lobby.nikke-kr.com/v1/get-static-data-pack-info";
 
 	static async Task Main(string[] args)
 	{
@@ -91,6 +91,7 @@ public static class FileDecryptor
 
 		HttpClient client = new(handler);
 		client.DefaultRequestHeaders.Add("Accept", "application/octet-stream+protobuf");
+		client.DefaultRequestHeaders.Add("Accept-Encoding", "gzip, deflate");
 
 		byte[] postData = Array.Empty<byte>();
 		var content = new ByteArrayContent(postData);

@@ -10,7 +10,7 @@ namespace NikkeStaticData;
 public static class FileDecryptor
 {
 	static HttpClient client = new HttpClient();
-	private static readonly string url = "https://global-lobby.nikke-kr.com/v1/get-static-data-pack-info";
+	private static readonly string url = "https://global-lobby.nikke-kr.com/v1/get-static-data-pack-info-mpk";
 
 	static async Task Main(string[] args)
 	{
